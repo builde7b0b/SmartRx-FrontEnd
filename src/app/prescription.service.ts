@@ -6,6 +6,9 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class PrescriptionService {
+  private baseURL = ''
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
+
+  
 }
