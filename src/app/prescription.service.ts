@@ -15,9 +15,14 @@ export class PrescriptionService {
     return this.http.get(`${this.baseURL}/prescriptions`);
   }
 
+  submitRefillRequest(refillData: any) {
+    //implement logic to submit refill requests to backend API
+    return this.http.post(`{this.baseURL}/refill-request`, refillData)
+  }
 
 
 
 
-  
+
+
 }
