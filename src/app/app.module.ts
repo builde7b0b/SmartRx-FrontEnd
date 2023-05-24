@@ -5,12 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { PrescriptionListComponent } from './prescription-list/prescription-list.component';
+import { RefillRequestComponent } from './refill-request/refill-request.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    PrescriptionListComponent
+    PrescriptionListComponent,
+    RefillRequestComponent
   ],
   imports: [
     BrowserModule,
