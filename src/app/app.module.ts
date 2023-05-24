@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { PrescriptionListComponent } from './prescription-list/prescription-list.component';
 import { RefillRequestComponent } from './refill-request/refill-request.component';
+import { NotificationsComponent } from './notifications/notifications.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     PrescriptionListComponent,
-    RefillRequestComponent
+    RefillRequestComponent,
+    NotificationsComponent
   ],
   imports: [
     BrowserModule,
