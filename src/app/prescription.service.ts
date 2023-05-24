@@ -10,5 +10,14 @@ export class PrescriptionService {
 
   constructor(private http: HttpClient) { }
 
+  getPrescriptions() {
+    //add logic to retrieve prescriptions from the backend API
+    return this.http.get(`${this.baseURL}/prescriptions`);
+  }
+
+
+
+
+
   
 }
