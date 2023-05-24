@@ -1,6 +1,6 @@
 # See http://help.github.com/ignore-files/ for more about ignoring files.
-
-./G.sh
+*.sh
+G.sh
 # Compiled output
 /dist
 /tmp
