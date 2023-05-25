@@ -22,7 +22,16 @@ export class LoginComponent implements OnInit {
   }
 
   getUser() {
-    
+    this.userSubscription = this.userService.getUser().subscribe(
+      (response: User) => {
+        this.user = response;
+      },
+      (error) => {
+
+      }
+    );
   }
+
+  
 
 }
