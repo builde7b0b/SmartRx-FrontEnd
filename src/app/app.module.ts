@@ -15,11 +15,13 @@ import { NotificationsComponent } from './notifications/notifications.component'
     LoginComponent,
     PrescriptionListComponent,
     RefillRequestComponent,
-    NotificationsComponent
+    NotificationsComponent,
+    
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
