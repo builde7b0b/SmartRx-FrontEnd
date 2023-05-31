@@ -11,8 +11,22 @@ import { Subscription } from 'rxjs';
 })
 export class LoginComponent implements OnInit {
 
-  user: User;
-  userSubscription: Subscription;
+  user: User = {
+    name: '',
+    id: 0,
+    firstName: '',
+    lastName: '',
+    email: '',
+    dob: '',
+    allergies: null,
+    userProfile: {
+      id: 0,
+      role: ''
+    },
+    prescriptionList: []
+  };
+  
+  userSubscription: Subscription = new Subscription;
 
   constructor(private userService: UserService) {
 
@@ -22,18 +36,20 @@ export class LoginComponent implements OnInit {
   }
 
   getUser() {
-    this.userSubscription = this.userService.getUser().subscribe(
-      (response: User) => {
+    console.log("running")
+    this.userSubscription = this.userService.getUser().subscribe({
+      next: (response: User) => {
         this.user = response;
+        console.log(response);
       },
-      (error) => {
+      error: (error) => {
 
       }
-    );
+  });
   }
 
   ngOnDestroy() {
-    
+    this.userSubscription.unsubscribe();
   }
 
 }

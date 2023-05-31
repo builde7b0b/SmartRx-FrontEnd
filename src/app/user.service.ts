@@ -9,7 +9,7 @@ import { LoginRequest } from './login-request.model'
   providedIn: 'root'
 })
 export class UserService {
-  private baseUrl = 'http://localhost:8080/api';
+  private baseUrl = 'http://localhost:8080';
 
   constructor(private http: HttpClient) { }
 
@@ -22,9 +22,11 @@ export class UserService {
   }
 
   getUser(): Observable<User> {
-    const token = 'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJnZW5lQGdtYWlsLmNvbSIsImlhdCI6MTY4NDk3MzU4NSwiZXhwIjoxNjg1MDU5OTg1fQ.y--DgBrsOfzti4voJISJaeAJJRe1eJBuT7hGwn9KcKI';
+    console.log("getting User")
+    const token = 'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJieHh4QGdtYWlsLmNvbSIsImlhdCI6MTY4NTUwOTg2NCwiZXhwIjoxNjg1NTk2MjY0fQ.g-j7QT12DzGmUMrJDpxlQubbbFSedrJ2tmMlr0H9uyg';
     const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
-    return this.http.get<User>(`${this.baseUrl}/users`, { headers });
+    console.log(headers);
+    return this.http.get<User>(`${this.baseUrl}/api/users`, { headers });
   }
 
   updateCurrentUser(user: User): Observable<User> {
