@@ -1,1 +1,7 @@
 <p>login works!</p>
+
+<div *ngIf="user">
+    <h2>User Details</h2>
+    <p>Name: {{user.name}}</p>
+    <p>Email: {{user.email}}</p>
+</div>

@@ -6,7 +6,13 @@ import { RefillRequestComponent } from './refill-request/refill-request.componen
 
 
 
-const routes: Routes = [];
+const routes: Routes = [
+  { path: 'login', component: LoginComponent },
+  { path: 'prescriptions', component: PrescriptionListComponent },
+  { path: 'refill-request', component: RefillRequestComponent },
+  { path: '', redirectTo: 'login', pathMatch: 'full' }, // Add a default route
+  { path: '**', redirectTo: 'login' }, // Add a wildcard route for handling unknown paths
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
